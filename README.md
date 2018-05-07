@@ -4,5 +4,7 @@ Search through a directory for personal geodatabase files(*.mdb), copy each pers
 # Requirements
 Python 2.7.14, arcpy from ArcMap 10.6
 
+In python3.6 (ArcPro), arcpy cannot list the datasets in personal geodabase(*.mdb) files.
+
 # Usage
 Change the directory of mdb files in inws, the directory for gdb files in outws.
