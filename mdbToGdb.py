@@ -56,10 +56,6 @@ for m in mdbs:
         arcpy.CopyFeatures_management(fc, os.path.join(outws, fgdb_name, fc))
         # print("Feature class directly in personal geodatabase: ", fc)
 
-    # Report on processing status
-    print "%s of %s personal databases converted to FGDB" % (count, len(mdbs))
-    count += 1
-
     # List the feature dataset, directly in personal geodatabase
     arcpy.env.workspace = os.path.join(inws, m)
     fds = arcpy.ListDatasets()
@@ -82,6 +78,10 @@ for m in mdbs:
         for fc in fcs:
             arcpy.CopyFeatures_management(fc, os.path.join(outws, fgdb_name, f, fc))
             # print("Feature class: ", fc)
+        
+    # Report on processing status
+    print("%s of %s personal databases converted to FGDB" % (count, len(mdbs)))
+    count += 1
 
 # test if the personal geodatabases and the file geodatabases have the same set of files.
 mdbs_s = set()
